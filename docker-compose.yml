@@ -11,24 +11,9 @@ services:
       - app_network
     expose:
       - "3306"
-    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-
-  laravel:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: laravel_server
     ports:
-      - "8080:80"
-    networks:
-      - app_network
-    depends_on:
-      - db
-    environment:
-      DB_HOST: db_server
-      DB_DATABASE: akioka_db
-      DB_USERNAME: akioka_administrator
-      DB_PASSWORD: Akiokapass0
+      - "3306:3306"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
