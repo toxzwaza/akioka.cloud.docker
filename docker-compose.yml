@@ -31,6 +31,8 @@ services:
       DB_DATABASE: akioka_db
       DB_USERNAME: akioka_administrator
       DB_PASSWORD: Akiokapass0
+    volumes:
+      - ./html:/var/www/html
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
